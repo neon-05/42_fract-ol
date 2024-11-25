@@ -1,3 +1,4 @@
 leaks.log
 ops
-main.o
+*.o
+fract-ol
