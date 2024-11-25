@@ -41,8 +41,10 @@ LIBOBJ = \
 		$(LIBDIR)/obj/mlx_string_put.o \
 		$(LIBDIR)/obj/mlx_xpm.o \
 
+.PHONY:
+	all clean fclean mlx
 
-all: $(NAME) $(LIBDIR)
+all: mlx $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) -o $(NAME) $(OBJ) $(LIBOBJ) $(LFLAGS)
@@ -50,7 +52,7 @@ $(NAME): $(OBJ)
 %.o: %.c
 	$(CC) $(CFLAGS) $(SRC)
 
-$(LIBDIR):
+mlx:
 	$(MAKE) -C $(LIBDIR)
 
 clean:
